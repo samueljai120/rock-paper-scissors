@@ -77,8 +77,9 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let input = prompt("Rock, Paper, Scissors");
-    return getHumanChoice;
+    const input = prompt("Rock, Paper, Scissors");
+    const lowerCase = input.toLowerCase();
+    return lowerCase;
 }
 
 
@@ -103,7 +104,7 @@ function playGame(times) {
         } else if ((humanChoice === "paper") && (computerChoice === "rock")) {
             console.log("You win!");
         } else {
-            console.log("Error!")
+            console.log("Try again!")
         }
     }
 
