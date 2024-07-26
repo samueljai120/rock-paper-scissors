@@ -1,4 +1,4 @@
-
+// step 2
 // a funtion to output random rock paper or scissors
 // function getComputerChoice()
 //    list <- [rock, paper, scissors]
@@ -8,23 +8,118 @@
 
 
 
-function getComputerChoice() {
-    let game = ["rock", "paper", "scissors"];
-    i = Math.floor(Math.random() * 3);
-    console.log(game[i]);
-    return list[i];
-}
+// function getComputerChoice() {
+//     let game = ["rock", "paper", "scissors"];
+//     i = Math.floor(Math.random() * 3);
+//     return list[i];
+// }
 
-
+// step 3
 // logic that gets human choices
 // function getHumanChoice
 // let input <- prompt(Rock, Paper or Scissors)
 // return input
 
 
-function getHumanChoice() {
-    let input = prompt("Rock, Paper, Scissors")
-    console.log(input)
+// function getHumanChoice() {
+//     let input = prompt("Rock, Paper, Scissors");
+//     return getHumanChoice;
+// }
+
+// step 4
+// function to keep track player scroes
+// let humanScore <- 0
+// let computerScore <- 0
+
+// let humanScore = 0;
+// let computerScore = 0;
+
+
+// Setp 5
+// play rounds and keep track of scores
+// 
+// function playRound (humanChoice, computerChoice) {
+// 
+// }
+// const humanSelection = getHumanChoice().tolowerCase
+// const computerSelection = getComputerChoice()
+// playRound(humanSelection, computerSelection)
+
+// function playRound (humanChoice, computerChoice) {
+
+// }
+
+// const humanSelection = getHumanChoice().toLoweCase();
+// const computerChoice = getComputerChoice();
+
+// playRound(humanChoice, computerChoice);
+
+
+// step 6
+// function playGame() {
+// function playRound
+// let humanScore
+// let computerscore
+// }
+// 
+// playRound 5 times
+// 
+// const rounds = 5
+// for (let i = 1; i <= 5; ++i) {
+//  playRound();
+// }
+// 
+
+function getComputerChoice() {
+    let game = ["rock", "paper", "scissors"];
+    i = Math.floor(Math.random() * 3);
+    return game[i];
 }
 
-getHumanChoice();
+function getHumanChoice() {
+    let input = prompt("Rock, Paper, Scissors");
+    return getHumanChoice;
+}
+
+
+function playGame(times) {
+
+    let humanScore = 0;
+    let computerScore = 0;
+
+    function playRound (humanChoice, computerChoice) {
+        if (humanChoice === computerChoice) {
+            console.log("Tie!");
+        } else if ((humanChoice === "rock") && (computerChoice === "scissors")) {
+            console.log("You win!");
+        } else if ((humanChoice === "scissors") && (computerChoice === "rock")) {
+            console.log("You lose!");
+        } else if ((humanChoice === "paper") && (computerChoice === "scissors")) {
+            console.log("You lose!");
+        } else if ((humanChoice === "rock") && (computerChoice === "paper")) {
+            console.log("You lose!");
+        } else if ((humanChoice === " scissors") && (computerChoice === "paper")) {
+            console.log("You win!");
+        } else if ((humanChoice === "paper") && (computerChoice === "rock")) {
+            console.log("You win!");
+        } else {
+            console.log("Error!")
+        }
+    }
+
+    const rounds = times;
+    for (let i = 1; i <= rounds; ++i) {
+        getHumanChoice();
+        getComputerChoice();
+        playRound(humanSelection, computerChoice);
+    }
+
+}
+
+    
+const humanSelection = getHumanChoice();
+const computerChoice = getComputerChoice();
+
+
+
+playGame(5);
