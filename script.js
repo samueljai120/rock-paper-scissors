@@ -45,29 +45,21 @@ function playGame(max){
         || ((humanChoice === "paper") && (computerChoice === "rock")) 
         || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
             humanScore += 1;
-            console.log("Human:" + humanScore + " Computer: " + computerScore);    
-        // humanWin = true;
-            // computerWin = false;    
+            console.log("Human:" + humanScore + " Computer: " + computerScore);       
             console.log("You Win!");
-            // return "You Win!";
             
         } else if(((humanChoice === "rock") && (computerChoice === "paper")) 
         || ((humanChoice === "paper") && (computerChoice === "scissors")) 
         || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
             computerScore += 1;
             console.log("Human:" + humanScore + " Computer: " + computerScore);
-        // computerWin = true;
-        // humanWin = false;   
             console.log("You lose!");
-            // return "You lose!";
         } else if (humanChoice === computerChoice) {
             console.log("Human:" + humanScore + " Computer: " + computerScore); 
             console.log("Tie!");
-            // return "Tie!";
         } else {
             console.log("Human:" + humanScore + " Computer: " + computerScore);
             console.log("Wrong Choice!");
-            // return "Wrong Choice!";
         }
     
 
