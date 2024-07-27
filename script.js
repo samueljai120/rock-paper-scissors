@@ -113,13 +113,13 @@ function playGame(rounds){
 
     // function playRound(humanChoice, computerChoice){
         // console.log(humanChoice, computerChoice);
-    if(((humanChoice == "rock") && (computerChoice == "scissors")) || ((humanChoice == "paper") && (computerChoice == "rock")) || ((humanChoice === "scissors") && (computerChoice == "paper"))) {
+    if(((humanChoice == "rock") && (computerChoice === "scissors")) || ((humanChoice === "paper") && (computerChoice === "rock")) || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
             humanWin = true;
             computerWin = false;    
             console.log("You Win!");
             // return "You Win!";
             
-    } else if(((humanChoice == "rock") && (computerChoice == "paper")) || ((humanChoice == "paper") && (computerChoice == "scissors")) || ((humanChoice === "scissors") && (computerChoice == "rock"))) {
+    } else if(((humanChoice == "rock") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
         computerWin = true;
         humanWin = false;   
         console.log("You lose!");
@@ -149,7 +149,7 @@ function playGame(rounds){
 
     if (humanScore >= rounds || computerScore >= rounds) {
         console.log("Game Over!");
-        break
+        break;
     }
 
     }
