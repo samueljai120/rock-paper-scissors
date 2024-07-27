@@ -27,3 +27,4 @@ So as to speak, the most frustrating bug I came across.
 The input value would end up triggering the "Wrong Choice" argument. I looked up every where, couldn't figure out the problem.
 And then the second day, I was improving the efficiency of the code. I was curious what the Math.floor(Math.random()) output was. I consolelog it and found out the numbers were always 1, 2, 3 but never 0. This is where I found the bug was the computer was not able to choose index 0 value, instead returning an unknown index 3 value, that causes the bug.
 
+ps: the old js code is in the old folder
