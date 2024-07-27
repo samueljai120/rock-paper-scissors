@@ -1,111 +1,32 @@
 console.log("Welcome To Human Vs Computer - Rock Paper Scissors -")
 
-
-// function getComputerChoice
-//     const choice = [ rock paper scissors]
-//     const i = Math floor(Math random () * 3)
-//     const comChoice = choice[i]
-
-// console log getComputerChoice
-
-// function getHumanChoice
-//     const humChoice = prompt Rock Paper or Scissors?
-//     return humChoice
-
-// const humanScore <- 0
-// const computerScore <- 0
-
-// function playRound(humanChoice,computerChoice)
-//     if ( humanChoice === computerChoice)
-//         return "Tie!"
-//     else if  humanChoice <- rock && computer <- paper
-    // return You lose
-    // else if  humanChoice <- rock && computer <- scissors
-    // return you win
-    // else if  humanChoice <- paper && computer <- rock
-    // return you win
-    // else if  humanChoice <- paper && computer <- scissors
-    // return you lose
-    // else if  humanChoice <- scissors && computer <- rock
-    // return you lose
-    // else if  humanChoice <- scissors && computer <- paper
-    // return you win
-    // else
-    // return wrong choice
-
-// const result = playRound();
-// if (result === you lose)
-//     return computerScore++
-// else if ( result === you win)
-//     return humanScore++
-// else 
-// return""
-
-
-// function getComputerChoice(){
-//     const choice = ["rock", "paper", "scissors"];
-//     const i = Math.floor(Math.random() * 3) + 1;
-//     const comChoice = choice[i];
-//     return comChoice;
-// }
-
-// // console.log(getComputerChoice());
-
-// function getHumanChoice(){
-//     const choice = prompt("Rock, Paper or Scissors?");
-//     const humChoice = choice.toLowerCase();
-//     return humChoice;
-// }
-
-// // console.log(getHumanChoice());
-
-// let humanScore = 0;
-// let computerScore = 0;
-
-// function playRound(humanChoice, computerChoice){
-//     // console.log(humanChoice, computerChoice);
-//     if(((humanChoice === "rock") && (computerChoice === "scissors")) || ((humanChoice === "paper") && (computerChoice === "rock")) || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
-//         return "You Win!"
-//         return humanScore += 1;
-//     } else if(((humanChoice === "rock") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
-//         return "You lose!"
-//         return computerScore += 1;;
-//     } else if (humanChoice === computerChoice){
-//         return "Tie!";
-//     } else {
-//         return "Wrong Choice!";
-//     }
-// }
-
-// const humanSelection = getHumanChoice();
-// const computerSelection = getComputerChoice();
-
-// const outCome = playRound(humanSelection, computerSelection);
-
+// Values declared to keep track
 let humanScore = 0;
 let computerScore = 0;
 let gameRound = 1;
     
-
+// This event is to trigger the function by the button on the html page
 document.getElementById("button").addEventListener("click", () => {
-    playGame(5);
+    playGame(5); // The game will have
 })
     
-    function playGame(rounds){
-    while (humanScore <= rounds && computerScore <= rounds) {
+    function playGame(max){
+    // This is to loop the game according to the max value
+    while (humanScore <= max && computerScore <= max) {
+        // The below three console will print a nice layout for the Round
         console.log("")
         console.log("Round: " + gameRound++);
         console.log("")
+    // The function is to generate computer's choice
     function getComputerChoice(){
         const choice = ["rock", "paper", "scissors"];
-        const i = Math.floor(Math.random() * 3);
-        const comChoice = choice[i];
+        const i = Math.floor(Math.random() * 3); // This is to generate random index 
+        const comChoice = choice[i]; // This is to choose the value of the array according to the generated random index
         console.log("Computer's choice: " + comChoice);
         return comChoice;
     }
     
-    // console.log(getComputerChoice());
-    
+    // This function to retrieve input and print prompt
     function getHumanChoice(){
         const choice = prompt("Enter Your Choice [ Rock, Paper or Scissors ]");
         const humChoice = choice.toLowerCase();
@@ -113,17 +34,11 @@ document.getElementById("button").addEventListener("click", () => {
         return humChoice;
     }
     
-    // console.log(getHumanChoice());
-    
-    
-
+    // Functions stored in variables
     const humanChoice = getHumanChoice();
     const computerChoice = getComputerChoice();
     
-    // playRound(humanSelection, computerSelection);
-
-    // function playRound(humanChoice, computerChoice){
-        // console.log(humanChoice, computerChoice);
+    // If statement comparing human and computer choices
     if(((humanChoice === "rock") && (computerChoice === "scissors")) 
         || ((humanChoice === "paper") && (computerChoice === "rock")) 
     || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
@@ -153,18 +68,9 @@ document.getElementById("button").addEventListener("click", () => {
             // return "Wrong Choice!";
     }
     
-    
-    // if (humanWin) {
-    //     humanScore += 1;
-    //     console.log("Human:" + humanScore + " Computer: " + computerScore);
-    // } else if (computerWin){
-    //     computerScore += 1;
-    //     console.log("Human:" + humanScore + " Computer: " + computerScore);
-    // } else {
-    //     console.log("Human:" + humanScore + " Computer: " + computerScore);
-    // }
 
-    if (humanScore >= rounds || computerScore >= rounds) {
+    // If statement to end the game
+    if (humanScore >= max || computerScore >= max) {
         console.log("Game Over!");
         if (humanScore = rounds) {
             console.log("Congadulations! You are the WINNER!");
@@ -176,9 +82,4 @@ document.getElementById("button").addEventListener("click", () => {
         
     }
 
-
     }
-    
-    // console.log(outCome);
-//  playGame(5));
-
