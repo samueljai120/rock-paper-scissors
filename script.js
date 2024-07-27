@@ -115,38 +115,40 @@ function playGame(rounds){
     // function playRound(humanChoice, computerChoice){
         // console.log(humanChoice, computerChoice);
     if(((humanChoice === "rock") && (computerChoice === "scissors")) || ((humanChoice === "paper") && (computerChoice === "rock")) || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
-            humanWin = true;
-            computerWin = false;    
-            console.log("You Win!");
+        humanScore += 1;
+        console.log("Human:" + humanScore + " Computer: " + computerScore);    
+        // humanWin = true;
+            // computerWin = false;    
+        onsole.log("You Win!");
             // return "You Win!";
             
     } else if(((humanChoice === "rock") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
-        computerWin = true;
-        humanWin = false;   
+        computerScore += 1;
+        console.log("Human:" + humanScore + " Computer: " + computerScore);
+        // computerWin = true;
+        // humanWin = false;   
         console.log("You lose!");
             // return "You lose!";
     } else if (humanChoice === computerChoice){
-        humanWin = false;
-        computerWin = false;  
+        console.log("Human:" + humanScore + " Computer: " + computerScore); 
         console.log("Tie!");
             // return "Tie!";
     } else {
-        humanWin = false;
-        computerWin = false;
+        console.log("Human:" + humanScore + " Computer: " + computerScore);
         console.log("Wrong Choice!");
             // return "Wrong Choice!";
     }
     
     
-    if (humanWin) {
-        humanScore += 1;
-        console.log("Human:" + humanScore + " Computer: " + computerScore);
-    } else if (computerWin){
-        computerScore += 1;
-        console.log("Human:" + humanScore + " Computer: " + computerScore);
-    } else {
-        console.log("Human:" + humanScore + " Computer: " + computerScore);
-    }
+    // if (humanWin) {
+    //     humanScore += 1;
+    //     console.log("Human:" + humanScore + " Computer: " + computerScore);
+    // } else if (computerWin){
+    //     computerScore += 1;
+    //     console.log("Human:" + humanScore + " Computer: " + computerScore);
+    // } else {
+    //     console.log("Human:" + humanScore + " Computer: " + computerScore);
+    // }
 
     if (humanScore >= rounds || computerScore >= rounds) {
         console.log("Game Over!");
