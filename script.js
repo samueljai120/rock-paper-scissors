@@ -44,7 +44,7 @@ console.log("HI")
 
 function getComputerChoice(){
     const choice = ["rock", "paper", "scissors"];
-    const i = Math.floor(Math.random() * 3);
+    const i = Math.floor((Math.random() * 3) + 1;
     const comChoice = choice[i];
     return comChoice;
 }
@@ -65,55 +65,43 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice){
     console.log(humanChoice, computerChoice);
     if(((humanChoice === "rock") && (computerChoice === "scissors")) || ((humanChoice === "paper") && (computerChoice === "rock")) || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
-        return "You Win!";
+        result "You Win!";
     } else if(((humanChoice === "rock") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
-        return "You lose!";
+        result "You lose!";
     } else if (humanChoice === computerChoice){
-        return "Tie!";
+        result "Tie!";
     } else {
-        return "Wrong Choice!";
+        result "Wrong Choice!";
     }
 }
 
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-const result = playRound(humanSelection, computerSelection);
+const outCome = playRound(humanSelection, computerSelection);
 
 function scoreBoard() {
-    if (result === "You win!") {
-        const humScore = "Human Score: " + humanScore++
-        return humScore
-    } else if (result === "You lose!") {
-        const comScore = "Human Score: " + computerScore++
-        return comScore
+    if (outCome === "You win!") {
+        let humanScore += 1;
+    } else if (outCome === "You lose!") {
+        let computerScore += 1;
     } else {
         return "No Winner!"
     }
 }
 
-const score = scoreBoard();
+// const score = scoreBoard();
 
-function trigger(){
-    if (score < 5){
-        console.log(score);
-    } else {
-            console.log("Game Over!")
-        }
-}
+// const anyScore = score.match(/(\d+)/);
 
-const times = trigger();
-console.log(times);
-// function trigger(){
-//     if score
+// function trigger(){{
+//     for (; anyScore < 5;){
+//         console.log(result);
+//         break
+//     }  
+//     console.log("Game Over!")
+//     }
 // }
 
-// console.log(result, score);
+// trigger();
 
-// const result = playRound();
-// if (result === you lose)
-//     return computerScore++
-// else if ( result === you win)
-//     return humanScore++
-// else 
-// return""
