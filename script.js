@@ -89,7 +89,8 @@ function playGame(rounds){
     while (humanScore <= rounds && computerScore <= rounds) {
     function getComputerChoice(){
         const choice = ["rock", "paper", "scissors"];
-        const i = Math.floor(Math.random() * 3) + 1;
+        const i = Math.floor(Math.random() * 3);
+        console.log(i);
         const comChoice = choice[i];
         return comChoice;
     }
@@ -119,7 +120,7 @@ function playGame(rounds){
         console.log("Human:" + humanScore + " Computer: " + computerScore);    
         // humanWin = true;
             // computerWin = false;    
-        onsole.log("You Win!");
+        console.log("You Win!");
             // return "You Win!";
             
     } else if(((humanChoice === "rock") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
@@ -129,7 +130,7 @@ function playGame(rounds){
         // humanWin = false;   
         console.log("You lose!");
             // return "You lose!";
-    } else if (humanChoice === computerChoice){
+    } else if (humanChoice === computerChoice) {
         console.log("Human:" + humanScore + " Computer: " + computerScore); 
         console.log("Tie!");
             // return "Tie!";
