@@ -1,4 +1,4 @@
-// Rock Paper Scissors coded by Samuel So, July 27 2024
+// Rock Paper Scissors coded by Samuel So, July 27
 
 console.log("Welcome To Human Vs Computer - Rock Paper Scissors -")
 
