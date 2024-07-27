@@ -78,7 +78,37 @@ function playRound(humanChoice, computerChoice){
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
-console.log(playRound(humanSelection, computerSelection));
+const result = playRound(humanSelection, computerSelection);
+
+function scoreBoard() {
+    if (result === "You win!") {
+        const humScore = "Human Score: " + humanScore++
+        return humScore
+    } else if (result === "You lose!") {
+        const comScore = "Human Score: " + computerScore++
+        return comScore
+    } else {
+        return "No Winner!"
+    }
+}
+
+const score = scoreBoard();
+
+function trigger(){
+    if (score < 5){
+        console.log(score);
+    } else {
+            console.log("Game Over!")
+        }
+}
+
+const times = trigger();
+console.log(times);
+// function trigger(){
+//     if score
+// }
+
+// console.log(result, score);
 
 // const result = playRound();
 // if (result === you lose)
