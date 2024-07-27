@@ -93,6 +93,7 @@ function playGame(rounds){
         const choice = ["rock", "paper", "scissors"];
         const i = Math.floor(Math.random() * 3);
         const comChoice = choice[i];
+        console.log("Computer's choice: " + comChoice);
         return comChoice;
     }
     
@@ -101,7 +102,7 @@ function playGame(rounds){
     function getHumanChoice(){
         const choice = prompt("Enter Your Choice [ Rock, Paper or Scissors ]");
         const humChoice = choice.toLowerCase();
-        // console.log(humChoice);
+        console.log("Your choice: " + humChoice);
         return humChoice;
     }
     
