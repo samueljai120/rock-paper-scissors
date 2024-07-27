@@ -66,7 +66,7 @@ function playGame(max){
     // If statement to end the game
         if (humanScore >= max || computerScore >= max) {
             console.log("Game Over!");
-            if (humanScore = rounds) {
+            if (humanScore = max) {
                 console.log("Congadulations! You are the WINNER!");
             } else {
                 console.log("Good Game! Better luck next time!");
