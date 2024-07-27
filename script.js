@@ -86,7 +86,12 @@ let humanScore = 0;
 let computerScore = 0;
 let gameRound = 1;
     
-function playGame(rounds){
+
+document.getElementById("button").addEventListener("click", () => {
+    playGame(5);
+})
+    
+    function playGame(rounds){
     while (humanScore <= rounds && computerScore <= rounds) {
         console.log("")
         console.log("Round: " + gameRound++);
@@ -175,6 +180,5 @@ function playGame(rounds){
     }
     
     // console.log(outCome);
+//  playGame(5));
 
-
-playGame(5);
