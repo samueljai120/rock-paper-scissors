@@ -1,3 +1,5 @@
+// Rock Paper Scissors coded by Samuel So, July 27 2024
+
 console.log("Welcome To Human Vs Computer - Rock Paper Scissors -")
 
 // Values declared to keep track
