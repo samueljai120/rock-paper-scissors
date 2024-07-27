@@ -158,12 +158,20 @@ function playGame(rounds){
 
     if (humanScore >= rounds || computerScore >= rounds) {
         console.log("Game Over!");
+        if (humanScore = rounds) {
+            console.log("Congadulations! You are the WINNER!");
+        } else {
+            console.log("Good Game! Better luck next time!");
+        }
         break;
+        }
+        
     }
+
 
     }
     
     // console.log(outCome);
-}
+
 
 playGame(5);
