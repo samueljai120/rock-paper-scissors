@@ -83,10 +83,12 @@ console.log("HI")
 // const outCome = playRound(humanSelection, computerSelection);
 
 let humanScore = 0;
-    let computerScore = 0;
+let computerScore = 0;
+let gameRound = 1;
     
 function playGame(rounds){
     while (humanScore <= rounds && computerScore <= rounds) {
+        console.log("Round: " + gameRound++);
     function getComputerChoice(){
         const choice = ["rock", "paper", "scissors"];
         const i = Math.floor(Math.random() * 3);
@@ -114,7 +116,9 @@ function playGame(rounds){
 
     // function playRound(humanChoice, computerChoice){
         // console.log(humanChoice, computerChoice);
-    if(((humanChoice === "rock") && (computerChoice === "scissors")) || ((humanChoice === "paper") && (computerChoice === "rock")) || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
+    if(((humanChoice === "rock") && (computerChoice === "scissors")) 
+        || ((humanChoice === "paper") && (computerChoice === "rock")) 
+    || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
         humanScore += 1;
         console.log("Human:" + humanScore + " Computer: " + computerScore);    
         // humanWin = true;
@@ -122,7 +126,9 @@ function playGame(rounds){
         console.log("You Win!");
             // return "You Win!";
             
-    } else if(((humanChoice === "rock") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
+    } else if(((humanChoice === "rock") && (computerChoice === "paper")) 
+        || ((humanChoice === "paper") && (computerChoice === "scissors")) 
+        || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
         computerScore += 1;
         console.log("Human:" + humanScore + " Computer: " + computerScore);
         // computerWin = true;
