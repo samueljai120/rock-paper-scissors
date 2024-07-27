@@ -44,7 +44,7 @@ console.log("HI")
 
 function getComputerChoice(){
     const choice = ["rock", "paper", "scissors"];
-    const i = Math.floor((Math.random() * 3) + 1;
+    const i = Math.floor(Math.random() * 3) + 1;
     const comChoice = choice[i];
     return comChoice;
 }
@@ -65,13 +65,13 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice){
     console.log(humanChoice, computerChoice);
     if(((humanChoice === "rock") && (computerChoice === "scissors")) || ((humanChoice === "paper") && (computerChoice === "rock")) || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
-        result "You Win!";
+        return humanScore += 1;
     } else if(((humanChoice === "rock") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
-        result "You lose!";
+        return computerScore += 1;;
     } else if (humanChoice === computerChoice){
-        result "Tie!";
+        return "Tie!";
     } else {
-        result "Wrong Choice!";
+        return "Wrong Choice!";
     }
 }
 
@@ -79,16 +79,6 @@ const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
 
 const outCome = playRound(humanSelection, computerSelection);
-
-function scoreBoard() {
-    if (outCome === "You win!") {
-        let humanScore += 1;
-    } else if (outCome === "You lose!") {
-        let computerScore += 1;
-    } else {
-        return "No Winner!"
-    }
-}
 
 // const score = scoreBoard();
 
