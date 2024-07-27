@@ -90,7 +90,6 @@ function playGame(rounds){
     function getComputerChoice(){
         const choice = ["rock", "paper", "scissors"];
         const i = Math.floor(Math.random() * 3);
-        console.log(i);
         const comChoice = choice[i];
         return comChoice;
     }
