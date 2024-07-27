@@ -1,4 +1,4 @@
-console.log("HI")
+console.log("Welcome To Human Vs Computer - Rock Paper Scissors -")
 
 
 // function getComputerChoice
@@ -88,7 +88,9 @@ let gameRound = 1;
     
 function playGame(rounds){
     while (humanScore <= rounds && computerScore <= rounds) {
+        console.log("")
         console.log("Round: " + gameRound++);
+        console.log("")
     function getComputerChoice(){
         const choice = ["rock", "paper", "scissors"];
         const i = Math.floor(Math.random() * 3);
