@@ -65,8 +65,10 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice){
     console.log(humanChoice, computerChoice);
     if(((humanChoice === "rock") && (computerChoice === "scissors")) || ((humanChoice === "paper") && (computerChoice === "rock")) || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
+        return "You Win!"
         return humanScore += 1;
     } else if(((humanChoice === "rock") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
+        return "You lose!"
         return computerScore += 1;;
     } else if (humanChoice === computerChoice){
         return "Tie!";
