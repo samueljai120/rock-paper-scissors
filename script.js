@@ -97,8 +97,9 @@ function playGame(rounds){
     // console.log(getComputerChoice());
     
     function getHumanChoice(){
-        const choice = prompt("Rock, Paper or Scissors?");
+        const choice = prompt("Enter Your Choice [ Rock, Paper or Scissors ]");
         const humChoice = choice.toLowerCase();
+        // console.log(humChoice);
         return humChoice;
     }
     
@@ -113,13 +114,13 @@ function playGame(rounds){
 
     // function playRound(humanChoice, computerChoice){
         // console.log(humanChoice, computerChoice);
-    if(((humanChoice == "rock") && (computerChoice === "scissors")) || ((humanChoice === "paper") && (computerChoice === "rock")) || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
+    if(((humanChoice === "rock") && (computerChoice === "scissors")) || ((humanChoice === "paper") && (computerChoice === "rock")) || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
             humanWin = true;
             computerWin = false;    
             console.log("You Win!");
             // return "You Win!";
             
-    } else if(((humanChoice == "rock") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
+    } else if(((humanChoice === "rock") && (computerChoice === "paper")) || ((humanChoice === "paper") && (computerChoice === "scissors")) || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
         computerWin = true;
         humanWin = false;   
         console.log("You lose!");
