@@ -16,9 +16,9 @@ function playGame(){
     // This is to loop the game according to the max value
     while (humanScore <= 5 && computerScore <= 5) {
         // The below three console will print a nice layout for the Round
-        console.log("")
-        console.log("Round: " + gameRound++);
-        console.log("")
+        const roundDiv = document.querySelector("#round");
+        roundDiv.innerText = "Round: " + gameRound++
+        
         // The function is to generate computer's choice
         function getComputerChoice(){
         const choice = ["rock", "paper", "scissors"];
