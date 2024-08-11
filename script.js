@@ -9,32 +9,31 @@ let gameRound = 1;
     
 // This event is to trigger the function by the button on the html page
 document.getElementById("button").addEventListener("click", () => {
-    playGame(); // The game will have
+    playGame(5); // The game will have
 })
     
-function playGame(){
+function playGame(max){
     // This is to loop the game according to the max value
-    while (humanScore <= 5 && computerScore <= 5) {
+    while (humanScore <= max && computerScore <= max) {
         // The below three console will print a nice layout for the Round
-        const roundDiv = document.querySelector("#round");
-        roundDiv.innerText = "Round: " + gameRound++
-        
+        console.log("")
+        console.log("Round: " + gameRound++);
+        console.log("")
         // The function is to generate computer's choice
         function getComputerChoice(){
-            const comChoice = document.querySelector("#comChoice");
-            const choice = ["rock", "paper", "scissors"];
-            const i = Math.floor(Math.random() * 3); // This is to generate random index 
-            const comChoice = choice[i]; // This is to choose the value of the array according to the generated random index
-            comChoice.innerText = "Computer's choice: " + comChoice;
-            return comChoice;
+        const choice = ["rock", "paper", "scissors"];
+        const i = Math.floor(Math.random() * 3); // This is to generate random index 
+        const comChoice = choice[i]; // This is to choose the value of the array according to the generated random index
+        console.log("Computer's choice: " + comChoice);
+        return comChoice;
         }
     
         // This function to retrieve input and print prompt
         function getHumanChoice(){
-            const choice = prompt("Enter Your Choice [ Rock, Paper or Scissors ]");
-            const humChoice = choice.toLowerCase();
-            console.log("Your choice: " + humChoice);
-            return humChoice;
+        const choice = prompt("Enter Your Choice [ Rock, Paper or Scissors ]");
+        const humChoice = choice.toLowerCase();
+        console.log("Your choice: " + humChoice);
+        return humChoice;
         }
     
         // Functions stored in variables
@@ -65,9 +64,9 @@ function playGame(){
     
 
     // If statement to end the game
-        if (humanScore >= 5 || computerScore >= 5) {
+        if (humanScore >= max || computerScore >= max) {
             console.log("Game Over!");
-            if (humanScore = 5) {
+            if (humanScore = max) {
                 console.log("Congadulations! You are the WINNER!");
             } else {
                 console.log("Good Game! Better luck next time!");
