@@ -21,19 +21,20 @@ function playGame(){
         
         // The function is to generate computer's choice
         function getComputerChoice(){
-        const choice = ["rock", "paper", "scissors"];
-        const i = Math.floor(Math.random() * 3); // This is to generate random index 
-        const comChoice = choice[i]; // This is to choose the value of the array according to the generated random index
-        console.log("Computer's choice: " + comChoice);
-        return comChoice;
+            const comChoice = document.querySelector("#comChoice");
+            const choice = ["rock", "paper", "scissors"];
+            const i = Math.floor(Math.random() * 3); // This is to generate random index 
+            const comChoice = choice[i]; // This is to choose the value of the array according to the generated random index
+            comChoice.innerText = "Computer's choice: " + comChoice;
+            return comChoice;
         }
     
         // This function to retrieve input and print prompt
         function getHumanChoice(){
-        const choice = prompt("Enter Your Choice [ Rock, Paper or Scissors ]");
-        const humChoice = choice.toLowerCase();
-        console.log("Your choice: " + humChoice);
-        return humChoice;
+            const choice = prompt("Enter Your Choice [ Rock, Paper or Scissors ]");
+            const humChoice = choice.toLowerCase();
+            console.log("Your choice: " + humChoice);
+            return humChoice;
         }
     
         // Functions stored in variables
