@@ -9,12 +9,12 @@ let gameRound = 1;
     
 // This event is to trigger the function by the button on the html page
 document.getElementById("button").addEventListener("click", () => {
-    playGame(5); // The game will have
+    playGame(); // The game will have
 })
     
-function playGame(max){
+function playGame(){
     // This is to loop the game according to the max value
-    while (humanScore <= max && computerScore <= max) {
+    while (humanScore <= 5 && computerScore <= 5) {
         // The below three console will print a nice layout for the Round
         console.log("")
         console.log("Round: " + gameRound++);
@@ -64,9 +64,9 @@ function playGame(max){
     
 
     // If statement to end the game
-        if (humanScore >= max || computerScore >= max) {
+        if (humanScore >= 5 || computerScore >= 5) {
             console.log("Game Over!");
-            if (humanScore = max) {
+            if (humanScore = 5) {
                 console.log("Congadulations! You are the WINNER!");
             } else {
                 console.log("Good Game! Better luck next time!");
