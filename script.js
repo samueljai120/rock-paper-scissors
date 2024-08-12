@@ -6,89 +6,75 @@ console.log("Welcome To Human Vs Computer - Rock Paper Scissors -")
 let humanScore = 0;
 let computerScore = 0;
 let gameRound = 1;
-    
-// This event is to trigger the function by the button on the html page
-document.getElementById("button").addEventListener("click", () => {
-    playGame(); // The game will have
-})
-//Scoreboard
-const scoreBoard = document.querySelector("#scoreBoard");
-//resultboard
-const resultBoard = document.querySelector("#result");
+
+//ScoreBord Display
+const scoreBord =  document.querySelector("#scoreBoard");
+
+const roundDisplay = document.createElement("p");
+const humChoicesDisplay = document.createElement("p");
+const comChoicesDisplay = document.createElement("p");
+const scoreDisplay = document.createElement("p");
+const winnerDisplay = document.createElement("p");
+const gameOverDisplay = document.createElement("p");
+//append above
+scoreBord.append(roundDisplay, humChoicesDisplay, comChoicesDisplay, scoreDisplay, winnerDisplay, gameOverDisplay);
+
+
+
 // The function is to generate computer's choice
 function getComputerChoice(){
     const choice = ["rock", "paper", "scissors"];
     const i = Math.floor(Math.random() * 3); // This is to generate random index 
     const comChoice = choice[i]; // This is to choose the value of the array according to the generated random index
-    const comChoiceDisplay = document.createElement("p");
-    comChoiceDisplay.inneerText = "Computer's choice: " + comChoice;
-    scoreBoard.append(comChoiceDisplay);
+    comChoicesDisplay.innerText = "Computer's choice: " + comChoice;
     return comChoice;
-    }
+    }  
 
-    // This function to retrieve input and print prompt
-function getHumanChoice(){
-    const choice = prompt("Enter Your Choice [ Rock, Paper or Scissors ]");
-    const humChoice = choice.toLowerCase();
-    const humChoiceDisplay = document.createElement("p");
-    humChoiceDisplay.innerText = "Your choice: " + humChoice;
-    scoreBoard.append(humChoiceDisplay);
-    return humChoice;
-    }
-
-
-function playGame(){
-    // This is to loop the game according to the max value
-    while (humanScore <= 5 && computerScore <= 5) {
-        //choices button.
-        const choiceDiv = document.querySelector("#choices");
-
-        // The below three console will print a nice layout for the Round
-        
-        const currentRound = document.createElement("p");
-        currentRound.innerText = "Round: " + gameRound++ ;
-        scoreBoard.append(currentRound);
-        
-        
-    
-        // Functions stored in variables
-        const humanChoice = getHumanChoice();
-        const computerChoice = getComputerChoice();
-    
-        // If statement comparing human and computer choices
-        if(((humanChoice === "rock") && (computerChoice === "scissors")) 
+function compareResult(humanChoice, computerChoice) {
+    // If statement comparing human and computer choices
+    if(((humanChoice === "rock") && (computerChoice === "scissors")) 
         || ((humanChoice === "paper") && (computerChoice === "rock")) 
         || ((humanChoice === "scissors") && (computerChoice === "paper"))) {
             humanScore += 1;
-            console.log("Human:" + humanScore + " Computer: " + computerScore);       
-            console.log("You Win!");
+            winnerDisplay.innerText = "You Win!";
             
         } else if(((humanChoice === "rock") && (computerChoice === "paper")) 
         || ((humanChoice === "paper") && (computerChoice === "scissors")) 
         || ((humanChoice === "scissors") && (computerChoice === "rock"))) {
             computerScore += 1;
-            console.log("Human:" + humanScore + " Computer: " + computerScore);
-            console.log("You lose!");
+            winnerDisplay.innerText = "You lose!";
         } else if (humanChoice === computerChoice) {
-            console.log("Human:" + humanScore + " Computer: " + computerScore); 
-            console.log("Tie!");
+            winnerDisplay.innerText = "Tie!";
         } else {
-            console.log("Human:" + humanScore + " Computer: " + computerScore);
-            console.log("Wrong Choice!");
+            winnerDisplay.innerText = "Wrong Choice!";
         }
-    
 
-    // If statement to end the game
+        scoreDisplay.innerText = "Human:" + humanScore + " Computer: " + computerScore;       
+
+        //gameover trigger
         if (humanScore >= 5 || computerScore >= 5) {
-            resultBoard.innerText = "Game Over!";
-            if (humanScore = 5) {
-                resultBoard.innerText = "Congadulations! You are the WINNER!";
-            } else {
-                resultBoard.innerText = "Good Game! Better luck next time!";
-            }
-            break;
+            gameover();
         }
-        
+    }
+    // If statement to end the game
+    function gameover() {
+    if (humanScore = 5) {
+                gameOverDisplay.innerText = "Congadulations! You are the WINNER!";
+            } else {
+                gameOverDisplay.innerText = "Good Game! Better luck next time!";
+            }
     }
 
-}
+        
+        
+
+// This function to retrieve input and print prompt
+const buttonChoices = document.querySelector("#choices");
+buttonChoices.addEventListener("click", () => {
+    const humanChoice = event.target.innerText.toLowerCase();
+    humChoicesDisplay.innerText = "Your Choice: " + event.target.innerText;
+    const computerChoice = getComputerChoice();
+    compareResult(humanChoice, computerChoice)
+    roundDisplay.innerText = "Round: " + gameRound++
+
+})
